@@ -42,7 +42,7 @@ const addNewVehicle = ({
                 })
 
                 newVehicle.save()
-                res.json({ "status": 200 })
+                res.json({ "status": 200, "message": `${licensePlate}, ${manufacturer} ${model} ${year} added successfully!` })
             }
         })
 }
