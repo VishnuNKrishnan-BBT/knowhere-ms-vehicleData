@@ -54,7 +54,7 @@ app.post('/linkedVehicles', (req, res) => {
 
 
 app.post('/newVehicle', (req, res) => {
-    addNewVehicle({ ...req.body })
+    addNewVehicle({ ...req.body, res })
 })
 
 //START SERVER

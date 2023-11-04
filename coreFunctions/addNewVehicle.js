@@ -14,7 +14,8 @@ const addNewVehicle = ({
     colour,
     transmission,
     engineNumber,
-    chassisNumber
+    chassisNumber,
+    res
 }) => {
     const newVehicle = new Vehicle({
         vehicleId: vehicleId,
@@ -35,6 +36,8 @@ const addNewVehicle = ({
     })
 
     newVehicle.save()
+
+    res.json({ "status": 200 })
 }
 
 module.exports = addNewVehicle
