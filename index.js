@@ -33,7 +33,7 @@ app.use(authenticate)
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.send('Hello, World!')
+    res.send('Invalid request')
 })
 
 app.post('/linkedVehicles', (req, res) => {
