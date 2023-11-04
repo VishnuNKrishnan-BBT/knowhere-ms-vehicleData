@@ -21,7 +21,6 @@ const authenticate = (req, res, next) => {
     if (!token || token !== 'your-secret-token') {
         return res.status(401).json({ message: 'Unauthorized' });
     }
-
     next()
 }
 
@@ -36,28 +35,12 @@ app.get('/', (req, res) => {
     res.send('Invalid request')
 })
 
-app.post('/linkedVehicles', (req, res) => {
-    var returnData = []
-
-    var vehicleData = {
-        accountId: 1212621,
-        vehicleId: 'WQC-212-OPS-305'
-    }
-
-    returnData.push(vehicleData)
-
-    res.send(returnData)
-})
-
-
-
-
-
+//Add new vehicle
 app.post('/newVehicle', (req, res) => {
     addNewVehicle({ ...req.body, res })
 })
 
-//START SERVER
+//Start app
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })
