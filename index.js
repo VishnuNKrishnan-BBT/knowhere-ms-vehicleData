@@ -10,9 +10,16 @@ const app = express()
 const port = process.env.PORT || 4000
 
 //MIDDLEWARE - REQUEST FORMATTING
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const addNewTracker = require('./coreFunctions/addNewTracker');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+// Enable CORS (Cross-Origin Resource Sharing)
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*'); // You can specify specific origins instead of '*'
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+})
 
 // MIDDLEWARE - AUTHENTICATION
 const authenticate = (req, res, next) => {
@@ -33,6 +40,12 @@ app.use(authenticate)
 //ROUTES
 app.get('/', (req, res) => {
     res.send('Invalid request')
+})
+
+//Add new tracker
+app.post('/newTracker', (req, res) => {
+    // console.log(req.body);
+    addNewTracker({ ...req.body, res })
 })
 
 //Add new vehicle
