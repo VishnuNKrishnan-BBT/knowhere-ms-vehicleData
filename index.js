@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Enable CORS (Cross-Origin Resource Sharing)
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*'); // You can specify specific origins instead of '*'
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+    next()
 })
 
 // MIDDLEWARE - AUTHENTICATION
