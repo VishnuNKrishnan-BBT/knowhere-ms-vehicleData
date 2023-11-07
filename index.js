@@ -1,5 +1,6 @@
 //MODULE IMPORTS
 const express = require('express')
+const cors = require('cors')
 require('dotenv').config();
 
 //CORE FUNTIONS IMPORT
@@ -15,11 +16,8 @@ const addNewTracker = require('./coreFunctions/addNewTracker');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// Enable CORS (Cross-Origin Resource Sharing)
-app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*'); // You can specify specific origins instead of '*'
-    next()
-})
+// Enable CORS for all routes
+app.use(cors())
 
 // MIDDLEWARE - AUTHENTICATION
 const authenticate = (req, res, next) => {
