@@ -1,8 +1,6 @@
 const { connectToDB } = require('../connectToDB')
 const Vehicle = require('../models/vehicle')
 
-connectToDB()
-
 const addNewVehicle = ({
     vehicleId,
     trackerId,

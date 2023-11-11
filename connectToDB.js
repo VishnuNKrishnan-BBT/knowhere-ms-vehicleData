@@ -12,4 +12,9 @@ const connectToDB = async () => {
     }
 }
 
-module.exports = { connectToDB }
+const disconnectFromDB = async () => {
+    mongoose.connection.close()
+    console.log('Disconnected from DB.');
+}
+
+module.exports = { connectToDB, disconnectFromDB }
