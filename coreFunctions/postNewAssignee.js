@@ -13,18 +13,7 @@ const postNewAssignee = ({
     res
 }) => {
 
-    console.log({
-        firstName,
-        lastName,
-        primaryContactCC,
-        primaryContactNumber,
-        primaryContactEmail,
-        secondaryContactCC,
-        secondaryContactNumber,
-        secondaryContactEmail,
-        photoB64,
-        res
-    });
+    console.log('Posting new assignee...');
 
     const assigneeId = `ASN_${Date.now()}`
 
