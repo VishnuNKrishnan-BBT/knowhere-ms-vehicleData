@@ -15,6 +15,7 @@ const port = process.env.PORT || 4000
 const bodyParser = require('body-parser');
 const addNewTracker = require('./coreFunctions/addNewTracker');
 const getAllVehicles = require('./coreFunctions/getAllVehicles');
+const postNewAssignee = require('./coreFunctions/postNewAssignee');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -54,6 +55,11 @@ app.post('/newTracker', (req, res) => {
 //Add new vehicle
 app.post('/newVehicle', (req, res) => {
     addNewVehicle({ ...req.body, res })
+})
+
+//Add new assignee
+app.post('/newAssignee', (req, res) => {
+    postNewAssignee({ ...req.body, res })
 })
 
 //Get vehicles list

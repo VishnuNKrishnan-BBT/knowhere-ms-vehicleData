@@ -1,4 +1,3 @@
-const { connectToDB, disconnectFromDB } = require('../connectToDB')
 const Tracker = require('../models/tracker')
 
 const addNewTracker = ({
@@ -9,8 +8,6 @@ const addNewTracker = ({
     port = null,
     res
 }) => {
-
-    connectToDB()
 
     var actionBlocked = false //Flag. Updates to true if action should not be performed based on validation.
 
@@ -32,7 +29,6 @@ const addNewTracker = ({
                     })
 
                     newTracker.save()
-                    disconnectFromDB()
 
                     res.json({ "status": 200, "message": `${trackerId} added successfully!` })
                     return
