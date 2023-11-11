@@ -22,8 +22,16 @@ const assigneeSchema = new Schema({
         type: Number,
         required: true
     },
+    primaryContactNumberVerified: {
+        type: Boolean,
+        required: true
+    },
     primaryContactEmail: { //Country code (971, 91, 972 etc...)
         type: String,
+        required: true
+    },
+    primaryContactEmailVerified: {
+        type: Boolean,
         required: true
     },
     secondaryContactCC: { //Country code (971, 91, 972 etc...) without '+'
