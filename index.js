@@ -6,6 +6,9 @@ const { connectToDB } = require('./connectToDB')
 
 //CORE FUNTIONS IMPORT
 const addNewVehicle = require('./coreFunctions/addNewVehicle')
+const addNewTracker = require('./coreFunctions/addNewTracker');
+const getAllVehicles = require('./coreFunctions/getAllVehicles');
+const postNewAssignee = require('./coreFunctions/postNewAssignee');
 
 //INITIALIZE EXPRESS
 const app = express()
@@ -13,9 +16,6 @@ const port = process.env.PORT || 4000
 
 //MIDDLEWARE - REQUEST FORMATTING
 const bodyParser = require('body-parser');
-const addNewTracker = require('./coreFunctions/addNewTracker');
-const getAllVehicles = require('./coreFunctions/getAllVehicles');
-const postNewAssignee = require('./coreFunctions/postNewAssignee');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
