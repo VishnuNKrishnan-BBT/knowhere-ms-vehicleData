@@ -9,6 +9,7 @@ const addNewVehicle = require('./coreFunctions/addNewVehicle')
 const addNewTracker = require('./coreFunctions/addNewTracker');
 const getAllVehicles = require('./coreFunctions/getAllVehicles');
 const postNewAssignee = require('./coreFunctions/postNewAssignee');
+const getWaypoints = require('./coreFunctions/getWaypoints');
 
 //INITIALIZE EXPRESS
 const app = express()
@@ -65,6 +66,11 @@ app.post('/newAssignee', (req, res) => {
 //Get vehicles list
 app.get('/allVehicles', (req, res) => {
     getAllVehicles({ res })
+})
+
+//Get Waypoints - REFINEMENT REQUIRED
+app.get('/getWaypoints', (req, res) => {
+    getWaypoints({ res })
 })
 
 //Start app
