@@ -9,7 +9,7 @@ const getWaypoints = async ({ req, res }) => {
     const coords = await Waypoint.find({})
 
     coords.map((obj, key) => {
-        returnData.push([obj.longitude, obj.latitude])
+        returnData.push([obj.latitude, obj.longitude])
     })
 
     // console.log(returnData)
