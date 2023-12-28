@@ -17,6 +17,18 @@ const waypointSchema = new Schema({
     longitude: {
         type: Number,
         required: true
+    },
+    accuracy: {
+        type: Number,
+        required: false
+    },
+    speed: {
+        type: Number,
+        required: true
+    },
+    altitude: {
+        type: Number,
+        required: false
     }
 }, { timestamps: true })
 
