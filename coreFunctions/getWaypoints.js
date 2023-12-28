@@ -6,10 +6,12 @@ const getWaypoints = async ({ req, res }) => {
 
     const Waypoint = createWaypointModel('api_test_mob')
 
-    const coords = await Waypoint.find({})
+    const coords = await Waypoint.find({}) //Finds all
 
     coords.map((obj, key) => {
-        returnData.push([obj.longitude, obj.latitude])
+        if (obj.accuracy < 20) {
+            returnData.push([obj.longitude, obj.latitude])
+        }
     })
 
     // console.log(returnData)
