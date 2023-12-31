@@ -10,7 +10,11 @@ const getWaypoints = async ({ req, res }) => {
 
     coords.map((obj, key) => {
         if (!obj.accuracy || obj.accuracy < 50) { // lower to 20
-            returnData.push([obj.longitude, obj.latitude])
+            returnData.push({
+                longitude: obj.longitude,
+                latitude: obj.latitude,
+                speed: obj.speed
+            })
         }
     })
 
