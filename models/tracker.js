@@ -7,7 +7,7 @@ const trackerSchema = new Schema({
         required: true
     },
     isAssigned: { //Is assigned to a vehicle Id
-        type: String,
+        type: Boolean,
         required: true
     },
     trackerPassword: {
